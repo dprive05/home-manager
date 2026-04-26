@@ -11,7 +11,12 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+     inputs@{ 
+       nixpkgs,
+       home-manager,
+       zen-browser,
+       ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,9 +27,9 @@
 
         modules = [ ./home.nix ];
 	
-	pecialArgs = {
+	extraSpecialArgs = {
           inherit inputs;
-          zen-browser = inputs.zen-browser.packages."x86_64-linux".default;
+	  zen-browser = zen-browser.packages.${system}.default;
         };
       };
     };

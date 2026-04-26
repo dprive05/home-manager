@@ -13,9 +13,10 @@
   
   home.stateVersion = "25.11";
   
-  home.packages = [
-   zen-browser 
-   pkgs.vesktop
+  home.packages = with pkgs; [   
+   vesktop
+ ] ++ [
+   zen-browser
  ];
 
   home.file = {
