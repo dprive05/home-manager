@@ -15,6 +15,7 @@
   
   home.packages = [
    zen-browser 
+   vesktop
  ];
 
   home.file = {
