@@ -17,6 +17,9 @@
    vesktop
    virtualbox
    deezer-enhanced
+   microsoft-edge
+   prismlauncher
+   git
   ] ++ [
    zen-browser
   ];

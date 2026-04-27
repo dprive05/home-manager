@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
@@ -15,11 +16,17 @@
        nixpkgs,
        home-manager,
        zen-browser,
+       hyprland,
        ...
     }:
     let
+      pkgs = import nixpkgs {
+            inherit system;
+            config = {
+              allowUnfree = true;
+            };
+          };
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       homeConfigurations."raph" = home-manager.lib.homeManagerConfiguration {
