@@ -20,7 +20,9 @@
    microsoft-edge
    prismlauncher
    git
-  
+   unzip
+   vlc
+ 
    # Polices
    nerd-fonts.jetbrains-mono
    nerd-fonts.symbols-only
@@ -38,6 +40,7 @@
    lm_sensors            # pour la température CPU
    wlogout
    swaynotificationcenter
+   libnotify
   ] ++ [
    zen-browser
   ];
@@ -45,7 +48,27 @@
   programs = {
     waybar.enable = true;
   };
- 
+
+  services.hyprpaper = {
+  enable = true;
+  settings = {
+    preload = [
+      "/home/raph/.config/home-manager/train.png"
+    ];
+    wallpaper = [
+      # By display
+      # {
+      #   monitor = "DP-2";
+      #   path = "~/wallpapers/wallpaper2.jpg";
+      # }
+      # By default/fallback
+      {
+        monitor = "";
+        path = "/home/raph/.config/home-manager/train.png"; 
+        }
+      ];
+    };
+  };
   home.file = {
   };
 
