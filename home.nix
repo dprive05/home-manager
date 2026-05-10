@@ -5,12 +5,15 @@
   ...
 }:
 
+
 {
   home = {
     username = "raph";
     homeDirectory = "/home/raph";
   };
-  
+ 
+  imports = [ ./modules ];
+ 
   home.stateVersion = "25.11";
   
   home.packages = with pkgs; [   
@@ -49,26 +52,6 @@
     waybar.enable = true;
   };
 
-  services.hyprpaper = {
-  enable = true;
-  settings = {
-    preload = [
-      "/home/raph/.config/home-manager/train.png"
-    ];
-    wallpaper = [
-      # By display
-      # {
-      #   monitor = "DP-2";
-      #   path = "~/wallpapers/wallpaper2.jpg";
-      # }
-      # By default/fallback
-      {
-        monitor = "";
-        path = "/home/raph/.config/home-manager/train.png"; 
-        }
-      ];
-    };
-  };
   home.file = {
   };
 
