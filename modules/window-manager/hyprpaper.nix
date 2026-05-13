@@ -11,12 +11,12 @@
     settings = {
       splash = false;
 
-      preload = [ ".config/home-manager/modules/window-manager/traim.png" ];
+      preload = [ ".config/home-manager/modules/window-manager/wallpaper/sword.jpg" ];
 
       wallpaper = [
       {
         monitor = "";
-        path = ".config/home-manager/modules/window-manager/train.png";
+        path = ".config/home-manager/modules/window-manager/wallpaper/sword.jpg";
        }
      ];
     };
