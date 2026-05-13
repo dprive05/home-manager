@@ -48,9 +48,6 @@
    zen-browser
   ];
   
-  programs = {
-    waybar.enable = true;
-  };
 
   home.file = {
   };
