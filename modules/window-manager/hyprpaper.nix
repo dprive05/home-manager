@@ -11,11 +11,12 @@
     settings = {
       splash = false;
 
+      preload = [ ".config/home-manager/modules/window-manager/traim.png" ];
+
       wallpaper = [
       {
         monitor = "";
-        path = "./train.png";
-        fit_mode = "tile";
+        path = ".config/home-manager/modules/window-manager/train.png";
        }
      ];
     };
