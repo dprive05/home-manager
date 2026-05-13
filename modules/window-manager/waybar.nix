@@ -65,7 +65,7 @@
     	"temperature" = {
           critical-threshold = 80;
           format = "{icon} {temperatureC}C";
-          format-icons = ["", "", ""];
+          format-icons = ["" "" ""];
           tooltip = false;
     	};
 	
@@ -87,7 +87,7 @@
           format = "{icon} {volume}%";
           format-muted = "󰝟";
           format-icons = {
-              default = ["󰕿", "󰖀", "󰕾"];
+              default = ["󰕿" "󰖀" "󰕾"];
           };
           on-click = "pavucontrol";
           tooltip = false;
@@ -95,7 +95,7 @@
 
     	"backlight" = {
           format = "{icon} {percent}%";
-          format-icons = ["󰃞", "󰃟", "󰃠"];
+          format-icons = ["󰃞" "󰃟" "󰃠"];
           tooltip = false;
     	};
 
@@ -107,7 +107,7 @@
           format = "{icon} {capacity}%";
           format-charging = "󱐥 {capacity}%";
           format-plugged = "󱘖 {capacity}%";
-          format-icons = ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁀", "󰁁", "󰁂", "󰀿"];             tooltip = false;
+          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰁀" "󰁁" "󰁂" "󰀿"];                       tooltip = false;
     	};
 
     	"tray" = {
