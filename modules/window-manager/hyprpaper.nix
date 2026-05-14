@@ -11,12 +11,12 @@
     settings = {
       splash = false;
 
-      preload = [ ".config/home-manager/modules/window-manager/wallpaper/sword.jpg" ];
+      preload = [ ".config/home-manager/modules/window-manager/wallpaper/wallpaperbetter.jpg" ];
 
       wallpaper = [
       {
         monitor = "";
-        path = ".config/home-manager/modules/window-manager/wallpaper/sword.jpg";
+        path = ".config/home-manager/modules/window-manager/wallpaper/wallpaperbetter.jpg";
        }
      ];
     };
