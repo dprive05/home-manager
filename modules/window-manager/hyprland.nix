@@ -169,7 +169,7 @@
 	  "$mainMod, J, layoutmsg, togglesplit"
 	  "$mainMod, W, exec, $browser"
 	  "SUPER, N, exec, swaync-client -t -sw"
-	  "SUPER SHIFT, L, exec, wlogout"
+	  "$mainMod, L, exec, hyprlock"
 
 	  # Move focus with mainMod + arrow keys
 	  "$mainMod, left, movefocus, l"
