@@ -9,6 +9,7 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    catppuccin.url = "github:catppuccin/nix/v25.05";
   };
 
   outputs =
@@ -17,6 +18,7 @@
        home-manager,
        zen-browser,
        hyprland,
+       catppuccin,
        ...
     }:
     let
@@ -34,6 +36,7 @@
 
         modules = [
           ./home.nix
+	  catppuccin.homeModules.catppuccin
         ];
 	
 	extraSpecialArgs = {

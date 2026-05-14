@@ -48,6 +48,7 @@
    zen-browser
   ];
   
+  catppuccin.flavor = "mocha";  
 
   home.file = {
   };

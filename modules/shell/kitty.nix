@@ -27,6 +27,6 @@
        term = "xterm-256color";
     };
   };
-
+  catppuccin.kitty.enable = true;
 }
 
