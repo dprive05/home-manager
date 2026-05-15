@@ -1,5 +1,40 @@
 { config, pkgs, ... }:
 {
+  home.packages =
+      with pkgs;
+      [
+	grim
+	slurp
+	wl-clipboard
+	vlc
+	imv
+	evince
+      ];
+
+  catppuccin = {
+      hyprland.enable = true;
+      cursors = {
+        enable = true;
+        accent = "dark";
+      };
+    };
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+        "audio/*" = [ "vlc.desktop" ];
+        "video/*" = [ "vlc.desktop" ];
+        "image/jpeg" = [ "imv.desktop" ];
+        "image/png" = [ "imv.desktop" ];
+        "image/gif" = [ "imv.desktop" ];
+        "image/webp" = [ "imv.desktop" ];
+        "text/plain" = [ "vim.desktop" ];
+        "application/pdf" = [ "org.gnome.Evince.desktop" ];
+        "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+        "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+      };
+   };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -171,6 +206,10 @@
 	  "SUPER, N, exec, swaync-client -t -sw"
 	  "$mainMod, L, exec, hyprlock"
 
+	  #Screenshot
+	  "$mainMod SHIFT, S, exec, bash -c 'f=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png; grim -g \"$(slurp)\" $f && wl-copy --type image/png < $f'"
+
+
 	  # Move focus with mainMod + arrow keys
 	  "$mainMod, left, movefocus, l"
 	  "$mainMod, right, movefocus, r"
@@ -209,7 +248,7 @@
 
 	  # Example special workspace (scratchpad)
 	  "$mainMod, S, togglespecialworkspace, magic"
-	  "$mainMod SHIFT, S, movetoworkspace, special:magic"
+	  #"$mainMod SHIFT, S, movetoworkspace, special:magic"
 
 	  # Scroll through existing workspaces with mainMod + scroll
 	  "$mainMod, mouse_down, workspace, e+1"

@@ -24,7 +24,7 @@
    prismlauncher
    git
    unzip
-   vlc
+   cisco-packet-tracer_9   
  
    # Polices
    nerd-fonts.jetbrains-mono
@@ -48,6 +48,7 @@
    zen-browser
   ];
   
+
   catppuccin.flavor = "mocha";  
 
   home.file = {
