@@ -25,6 +25,8 @@
    git
    unzip
    cisco-packet-tracer_9   
+   freeoffice
+
  
    # Polices
    nerd-fonts.jetbrains-mono
