@@ -25,7 +25,7 @@
    git
    unzip
    cisco-packet-tracer_9   
-   freeoffice
+   libreoffice
 
  
    # Polices
