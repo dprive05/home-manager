@@ -1,8 +1,57 @@
 { config, pkgs, ... }:
+
+let
+  framework-monitor = "eDP-1, 2560x1600@165, 0x0, 1.60";
+
+  clamshell = pkgs.writeShellScriptBin "clamshell" ''
+    #!/usr/bin/env bash
+
+    INTERNAL_DISPLAY=eDP-1
+
+    ICON_LAPTOP="computer-laptop"
+    ICON_MONITOR="video-display"
+
+    notify_user() {
+      notify-send -i "$3" "$1" "$2"
+    }
+
+    mode_close() {
+      MONITORS_COUNT=$(hyprctl monitors all | grep -c "Monitor")
+      if [[ $MONITORS_COUNT -gt 1 ]]; then
+        hyprctl keyword monitor "$INTERNAL_DISPLAY, disable"
+      fi
+    }
+
+    mode_open() {
+      hyprctl keyword monitor ${framework-monitor}
+    }
+
+    if [[ "$1" == "close" ]]; then
+      mode_close
+      notify_user "Clamshell Mode" "External monitor active. Laptop screen disabled." "$ICON_MONITOR"
+
+    elif [[ "$1" == "open" ]]; then
+      mode_open
+      notify_user "Laptop Mode" "Laptop screen enabled." "$ICON_LAPTOP"
+
+    elif [[ "$1" == "check" ]]; then
+      if grep -q "open" /proc/acpi/button/lid/*/state; then
+        mode_open
+      else
+        mode_close
+      fi
+
+    else
+      echo "Usage: clamshell [open|close|check]"
+      exit 1
+    fi
+  '';
+in
 {
   home.packages =
       with pkgs;
       [
+	clamshell
 	grim
 	slurp
 	wl-clipboard
@@ -43,7 +92,7 @@
 	### MONITORS ###
 	################
 	monitor = [
-	  "eDP-1, 2560x1600@165, 0x0, 1.60"		#framework monitor
+	  framework-monitor
 	  "DP-10, 1920x1080@100, 0x0, 1"		#Asus monitor
 	  "DP-9, 1920x1080@60, 1920x0, 1, transform, 1" #Samsung monitor
 	  ", preferred, auto, 1" 			#plug a random monitor 
@@ -70,7 +119,7 @@
 	  "hyprpaper"
 	];
 
-	exec = "${config.home.homeDirectory}/.config/home-manager/modules/window-manager/scripts/clamshell.sh check";
+	exec = "clamshell check";
 
 	
 	############################
@@ -312,7 +361,7 @@
 
 
 	workspace = [
- 	  "1, exec, $browser"
+	  "1, monitor:DP-10"
  	  "10, monitor:DP-9"
 	];
 
