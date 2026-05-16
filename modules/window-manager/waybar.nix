@@ -23,11 +23,9 @@
 	  "memory" 
 	  "temperature" 
 	  "network" 
-	  "bluetooth"
 	  "pulseaudio"
 	  "backlight"
 	  "battery"
-	  "custom/power"
 	];
 
 	"hyprland/workspaces" = {
@@ -104,22 +102,17 @@
               warning = 30;
               critical = 15;
           };
-          format = "{icon} {capacity}%";
-          format-charging = "󱐥 {capacity}%";
-          format-plugged = "󱘖 {capacity}%";
-          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰁀" "󰁁" "󰁂" "󰀿"];                       tooltip = false;
+	  format = "{icon} {capacity}%";
+	  format-charging = "󰂄 {capacity}%";
+	  format-plugged = "󰂄 {capacity}%";
+	  format-icons = ["󰁺" "󰁼" "󰁾" "󰂀" "󰂂" "󰁹" "󰂁" "󰂃"];
+	  tooltip = false;
     	};
 
     	"tray" = {
           spacing = 10;
     	};
 
-    	"custom/power" = {
-          format = "";
-          on-click = "wlogout";
-          tooltip = false;
-    	};
-	
 
       };
     };
@@ -149,8 +142,7 @@
       #pulseaudio,
       #backlight,
       #battery,
-      #tray,
-      #custom-power {
+      #tray {
          background-color: @base;
          color: @text;
          border-radius: 16px;
@@ -220,15 +212,6 @@
          animation-direction: alternate;
       }
 
-      #custom-power {
-         color: @red;
-         padding: 4px 16px;
-      }
-
-      #custom-power:hover {
-         background-color: @red;
-         color: @base;
-      }
 
       @keyframes blink {
          to {
