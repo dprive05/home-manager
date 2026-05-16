@@ -36,14 +36,11 @@
    #dépendance pour hyprland
    pavucontrol           # GUI son
    networkmanagerapplet  # fournit nm-connection-editor
-   brightnessctl         # contrôle luminosité
    wireplumber           # fournit wpctl 
    playerctl             # pour mpris
-   wofi			 #lunchbar
    brightnessctl         # pour le module brightness
    blueman               # GUI bluetooth 
    lm_sensors            # pour la température CPU
-   wlogout
    swaynotificationcenter
    libnotify
   ] ++ [

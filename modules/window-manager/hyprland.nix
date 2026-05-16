@@ -55,7 +55,7 @@
 	###################
 	"$terminal" = "kitty";
 	"$fileManager" = "dolphin";
-	"$menu" = "wofi";
+	"$menu" = "vicinae toggle";
 	"$browser" = "zen-beta";
 
 
