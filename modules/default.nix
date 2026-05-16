@@ -5,6 +5,7 @@
     ./window-manager/hyprpaper.nix
     ./window-manager/hyprlock.nix
     ./window-manager/vicinae.nix
+    ./window-manager/hypridle.nix
 
     ./shell/zsh.nix
     ./shell/kitty.nix
