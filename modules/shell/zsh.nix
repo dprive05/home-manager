@@ -12,14 +12,14 @@
   };
 
   programs = {
-    fastfetch = {
-      enable = true;
-    };
     bat = {
       enable = true;
       config.theme = "Catppuccin Mocha";
     };
-    
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   programs.zsh = {

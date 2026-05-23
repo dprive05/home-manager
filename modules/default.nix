@@ -9,7 +9,7 @@
 
     ./shell/zsh.nix
     ./shell/kitty.nix
-    
+    ./shell/fastfetch.nix 
   ];
 }
 
