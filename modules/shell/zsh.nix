@@ -48,8 +48,19 @@
       "la" = "ls -la";
       "cat" = "bat";
       "ssh" = "TERM=xterm-256color ssh";
-    };
+      "cl" = "clear && fastfetch";
 
+      #git 
+      "ga" = "git add .";
+      "gc" = "git commit -m";
+      "gp" = "git push";
+
+      #nix
+      "rebuild" = "nixos-rebuild switch --flake /etc/nixos/ --impure";
+      "hms" = "home-manager switch --flake .#raph";
+
+    };
+    
     # Variables d'environnement
     sessionVariables = {
       EDITOR = "vim";
@@ -57,12 +68,26 @@
 
     # Plugins zsh
     plugins = [
-      # exemple :
-      # {
-      #   name = "zsh-autosuggestions";
-      #   src = pkgs.zsh-autosuggestions;
-      # }
+      {
+         name = "zsh-completions";
+         src = pkgs.zsh-completions;
+         file = "share/zsh-completions/zsh-completions.zsh";
+      } 
+      {
+         name = "zsh-autosuggestions";
+         src = pkgs.zsh-autosuggestions;
+         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+      }
+      {
+         name = "zsh-syntax-highlighting";
+         src = pkgs.zsh-syntax-highlighting;
+         file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
+      }
+      
     ];
+    initContent = ''
+    fastfetch
+    '';    
   };
 }
 

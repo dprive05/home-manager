@@ -14,8 +14,8 @@
     enable = true;
  
     font = {
-       name = "Fira Code";
-       package = pkgs.fira-code;
+       name = "JetBrainsMono Nerd Font";
+       package = pkgs.nerd-fonts.jetbrains-mono;
        size = 12.5;
     };
 

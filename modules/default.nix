@@ -9,7 +9,8 @@
 
     ./shell/zsh.nix
     ./shell/kitty.nix
-    ./shell/fastfetch.nix 
+    ./shell/fastfetch.nix
+    ./shell/starship.nix
   ];
 }
 
