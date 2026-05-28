@@ -54,6 +54,8 @@
       "ga" = "git add .";
       "gc" = "git commit -m";
       "gp" = "git push";
+      "gpp" = "git pull"
+      "gs" = "git status";
 
       #nix
       "rebuild" = "nixos-rebuild switch --flake /etc/nixos/ --impure";

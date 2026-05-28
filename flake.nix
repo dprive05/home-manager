@@ -13,12 +13,17 @@
       url = "github:catppuccin/nix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
      inputs@{ 
        nixpkgs,
        home-manager,
+       sops-nix,
        zen-browser,
        hyprland,
        catppuccin,
@@ -39,6 +44,7 @@
 
         modules = [
 	  catppuccin.homeModules.catppuccin
+	  sops-nix.homeManagerModules.sops
           ./home.nix
         ];
 	
