@@ -54,7 +54,7 @@
       "ga" = "git add .";
       "gc" = "git commit -m";
       "gp" = "git push";
-      "gpp" = "git pull"
+      "gpp" = "git pull";
       "gs" = "git status";
 
       #nix
