@@ -24,7 +24,8 @@
    prismlauncher
    git
    unzip
-   cisco-packet-tracer_9   
+   ciscoPacketTracer8
+   #cisco-packet-tracer_9   
    libreoffice
 
  
