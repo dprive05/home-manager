@@ -8,6 +8,7 @@
       wget
       unzip
       nmap
+      xclip
     ];
   };
 
