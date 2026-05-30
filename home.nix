@@ -26,6 +26,7 @@
    unzip
    cisco-packet-tracer_9   
    libreoffice
+   freecad
 
  
    # Polices
