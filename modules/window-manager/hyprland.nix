@@ -58,6 +58,7 @@ in
 	vlc
 	imv
 	evince
+        nautilus
       ];
 
   catppuccin = {
@@ -67,6 +68,7 @@ in
         accent = "dark";
       };
     };
+
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
@@ -103,7 +105,7 @@ in
 	### MY PROGRAMS ###
 	###################
 	"$terminal" = "kitty";
-	"$fileManager" = "dolphin";
+	"$fileManager" = "nautilus";
 	"$menu" = "vicinae toggle";
 	"$browser" = "zen-beta";
 
