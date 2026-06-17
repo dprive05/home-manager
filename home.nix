@@ -18,7 +18,6 @@
   
   home.packages = with pkgs; [   
    vesktop
-   virtualbox
    deezer-enhanced
    microsoft-edge
    prismlauncher
