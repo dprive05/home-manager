@@ -17,6 +17,10 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    orca-slicer-flake = {
+      url = "github:EniumRaphael/orca-slicer-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
   };
 
   outputs =
@@ -27,6 +31,7 @@
        zen-browser,
        hyprland,
        catppuccin,
+       orca-slicer-flake,
        ...
     }:
     let
@@ -51,6 +56,11 @@
 	extraSpecialArgs = {
           inherit inputs;
 	  zen-browser = zen-browser.packages.${system}.default;
+          orca-slicer-pkg = 
+	   if orca-slicer-flake.packages ? ${system} then
+             orca-slicer-flake.packages.${system}.default
+           else
+            null;
         };
       };
     };

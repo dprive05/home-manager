@@ -2,6 +2,7 @@
   config,
   pkgs,
   zen-browser,
+  orca-slicer-pkg,
   ...
 }:
 
@@ -25,8 +26,7 @@
    unzip
    cisco-packet-tracer_9   
    libreoffice
-   freecad
-
+   obsidian 
  
    # Polices
    nerd-fonts.jetbrains-mono
@@ -45,6 +45,7 @@
    libnotify
   ] ++ [
    zen-browser
+   orca-slicer-pkg
   ];
   
 
