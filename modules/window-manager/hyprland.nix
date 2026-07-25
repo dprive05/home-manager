@@ -1,12 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  framework-monitor = "eDP-1, 2560x1600@165, 0x0, 1.60";
+  framework-monitor = "eDP-1, 2560x1600@165, 0x-1080, 1.60";
 
   clamshell = pkgs.writeShellScriptBin "clamshell" ''
     #!/usr/bin/env bash
-
-    INTERNAL_DISPLAY=eDP-1
 
     ICON_LAPTOP="computer-laptop"
     ICON_MONITOR="video-display"
@@ -18,7 +16,7 @@ let
     mode_close() {
       MONITORS_COUNT=$(hyprctl monitors all | grep -c "Monitor")
       if [[ $MONITORS_COUNT -gt 1 ]]; then
-        hyprctl keyword monitor "$INTERNAL_DISPLAY, disable"
+        hyprctl keyword monitor "eDP-1, disable"
       fi
     }
 
