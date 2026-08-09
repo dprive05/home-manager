@@ -1,67 +1,91 @@
 {
-  description = "Home Manager configuration of raph";
+  description = "Full NixOS configuration of home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin = {
-      url = "github:catppuccin/nix/release-25.11";
+      url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix = {
-      url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    orca-slicer-flake = {
-      url = "github:EniumRaphael/orca-slicer-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    }; 
+
   };
 
   outputs =
-     inputs@{ 
-       nixpkgs,
-       home-manager,
-       sops-nix,
-       zen-browser,
-       hyprland,
-       catppuccin,
-       orca-slicer-flake,
-       ...
+    inputs@{
+      nixpkgs,
+      home-manager,
+      zen-browser,
+      hyprland,
+      catppuccin,
+      ...
     }:
     let
-      pkgs = import nixpkgs {
-            inherit system;
-            config = {
-              allowUnfree = true;
-            };
-          };
-      system = "x86_64-linux";
-    in
-    {
-      homeConfigurations."raph" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      lib = nixpkgs.lib;
 
-        modules = [
-	  catppuccin.homeModules.catppuccin
-	  sops-nix.homeManagerModules.sops
-          ./home.nix
-        ];
-	
-	extraSpecialArgs = {
-          inherit inputs;
-	  zen-browser = zen-browser.packages.${system}.default;
-          orca-slicer-pkg = 
-	   if orca-slicer-flake.packages ? ${system} then
-             orca-slicer-flake.packages.${system}.default
-           else
-            null;
+      pkgsFor =
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+      mkHomeConfig =
+        {
+          system,
+          modulePath,
+        }:
+        let
+          pkgs = pkgsFor system;
+          sys = pkgs.stdenv.hostPlatform.system;
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            catppuccin.homeModules.catppuccin
+            modulePath
+          ];
+          extraSpecialArgs = {
+            inherit inputs;
+            zen-browser = if zen-browser.packages ? ${sys} then zen-browser.packages.${sys}.default else null;
+          };
+        };
+
+      hosts = {
+        root = {
+          system = "x86_64-linux";
+          path = ./host/root.nix;
+        };
+        framework = {
+          system = "x86_64-linux";
+          path = ./host/framework.nix;
         };
       };
+    in
+    {
+      homeConfigurations = lib.mapAttrs (
+        _: h:
+        mkHomeConfig {
+          system = h.system;
+          modulePath = h.path;
+        }
+      ) hosts;
+
+      homeModules = lib.mapAttrs (_: h: h.path) hosts;
     };
 }
