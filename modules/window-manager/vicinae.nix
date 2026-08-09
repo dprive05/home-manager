@@ -5,9 +5,11 @@
   lib,
   ...
 }:
-
+let
+  cfg = config.window-manager.vicinae;
+in
 {
-  config = {
+  config = lib.mkIf cfg {
     home.packages = with pkgs; [ vicinae ];
     catppuccin.vicinae.enable = true;
     programs.vicinae = {
