@@ -1,5 +1,0 @@
-[Login]
-KillUserProcesses=false
-HandleLidSwitch=ignore
-HandleLidSwitchExternalPower=ignore
-HandleLidSwitchDocked=ignore
