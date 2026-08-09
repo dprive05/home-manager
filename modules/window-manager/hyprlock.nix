@@ -5,7 +5,11 @@
   lib,
   ...
 }:
+let
+  cfg = config.window-manager.hyprlock;
+in
 {
+  config = lib.mkIf cfg {
     home.packages = with pkgs; [
       hyprlock
     ];
@@ -16,7 +20,9 @@
       enable = true;
       settings = {
         auth = {
-	  fingerprint = { enabled = true; };
+          fingerprint = {
+            enabled = true;
+          };
         };
         general = {
           hide_cursor = true;
@@ -43,5 +49,6 @@
           }
         ];
       };
-   };
+    };
+  };
 }

@@ -5,9 +5,11 @@
   lib,
   ...
 }:
-
+let
+  cfg = config.window-manager.hypridle;
+in
 {
-  config = {
+  config = lib.mkIf cfg {
     home.packages = with pkgs; [
       hypridle
     ];
@@ -19,7 +21,6 @@
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
         };
-
       };
     };
   };
