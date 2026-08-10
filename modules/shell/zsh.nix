@@ -69,7 +69,7 @@ in
           "ls" = "eza -h --icons=always";
           "la" = "ls -a";
           "ll" = "ls -l";
-          "lt" = "ls -aT";
+          "lt" = "ls -T";
           "l" = "ls -l";
           "vim" = "nvim";
           "ssh" = "TERM=xterm-256color ssh";
