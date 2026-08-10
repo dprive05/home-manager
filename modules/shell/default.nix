@@ -3,6 +3,7 @@
   config,
   pkgs,
   lib,
+  nixvim,
   ...
 }:
 
@@ -38,6 +39,7 @@ in
     starship
     zsh
   ];
+
   options.shell = {
     enable = lib.mkOption {
       type = lib.types.bool;
@@ -54,5 +56,14 @@ in
       default = true;
       description = "Enable the git config";
     };
+    nixvim = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable the nixvim config";
+    };
+  };
+
+   config = {
+    home.packages = lib.mkIf cfg.nixvim [ nixvim ];
   };
 }
