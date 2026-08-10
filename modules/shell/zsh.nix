@@ -64,8 +64,8 @@ in
         };
         shellAliases = {
           "cl" = "clear && fastfetch";
-          "nrs" = "sudo nixos-rebuild switch --flake /etc/nixos#&(hostname) |& nom";
-          "hms" = "home-manager switch --flake ~/.config/home-manager#&(hostname)  --impure |& nom";
+          "nrs" = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname) |& nom";
+          "hms" = "home-manager switch --flake ~/.config/home-manager#$(hostname) |& nom";
           "ls" = "eza -h --icons=always";
           "la" = "ls -a";
           "ll" = "ls -l";
