@@ -24,8 +24,8 @@ in
           [ ](#74c7ec)| ($directory) $git_branch$git_status$git_commit : $cmd_duration
           $character'';
         character = {
-          success_symbol = "[ ](#f9e2af)";
-          error_symbol = "[ ](#f38ba8)";
+          success_symbol = "[󰇥 ](#f9e2af)";
+          error_symbol = "[󰇥 ](#f38ba8)";
         };
         cmd_duration = {
           format = "[took](#cdd6f4) [$duration]($style)";
