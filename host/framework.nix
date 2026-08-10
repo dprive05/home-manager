@@ -5,6 +5,7 @@
   pkgs,
   lib,
   zen-browser,
+  nixvim,
   ...
 }:
 
@@ -23,6 +24,7 @@ let
       config
       pkgs
       lib
+      nixvim
       ;
   };
   packages = import ../modules/packages/default.nix {
@@ -47,7 +49,7 @@ in
     homeDirectory = "/home/raph";
     stateVersion = "24.05";
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "nvim";
     };
   };
 
@@ -55,6 +57,7 @@ in
     enable = true;
     starship = true;
     git = true;
+    nixvim = true;
   };
 
   window-manager = {
@@ -89,6 +92,7 @@ in
     imv = true;
     nautilus = true;
     zen = true;
+    lazygit = true;
   };
 
 }
