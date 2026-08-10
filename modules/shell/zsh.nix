@@ -69,7 +69,9 @@ in
           "ls" = "eza -h --icons=always";
           "la" = "ls -a";
           "ll" = "ls -l";
+          "lt" = "ls -aT";
           "l" = "ls -l";
+          "vim" = "nvim";
           "ssh" = "TERM=xterm-256color ssh";
           "vpn-on" = "sudo wg-quick up wg0";
           "vpn-off" = "sudo wg-quick down wg0";
