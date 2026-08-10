@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:EniumRaphael/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -33,6 +38,7 @@
       zen-browser,
       hyprland,
       catppuccin,
+      nixvim,
       ...
     }:
     let
@@ -62,6 +68,7 @@
           ];
           extraSpecialArgs = {
             inherit inputs;
+ 	    nixvim = nixvim.packages.${sys}.default;
             zen-browser = if zen-browser.packages ? ${sys} then zen-browser.packages.${sys}.default else null;
           };
         };
