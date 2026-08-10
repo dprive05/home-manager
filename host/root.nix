@@ -37,9 +37,9 @@ let
 in
 {
   imports = [
-    window-manager
-    shell
     packages
+    shell
+    window-manager
   ];
 
   home = {
@@ -67,7 +67,7 @@ in
     waybar = false;
   };
 
-  catpputccin = {
+  catppuccin = {
     enable = true;
     autoEnable = true;
     accent = "mauve";
@@ -88,6 +88,7 @@ in
     evince = false;
     imv = false;
     nautilus = false;
+    zen = false;
   };
 
 }
