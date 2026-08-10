@@ -127,7 +127,6 @@ in
       ++ (if cfg.vlc then [ vlc ] else [ ])
       ++ (if cfg.evince then [ evince ] else [ ])
       ++ (if cfg.imv then [ imv ] else [ ])
-      ++ (if cfg.nautilus then [ nautilus ] else [ ])
-      ++ (if cfg.zen then [ zen-browser ] else [ ]);
+      ++ (if cfg.nautilus then [ nautilus ] else [ ]);
   };
 }
