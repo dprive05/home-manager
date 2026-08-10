@@ -75,6 +75,7 @@ in
   };
 
   application = {
+    enable = true;
     kitty = true;
     prismlauncher = true;
     vesktop = true;
