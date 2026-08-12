@@ -61,9 +61,15 @@ in
       default = true;
       description = "Enable the nixvim config";
     };
+    lazygit = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable the lazygit config";
+    };
   };
 
    config = {
     home.packages = lib.mkIf cfg.nixvim [ nixvim ];
+    programs = {lazygit.enable = cfg.lazygit;};
   };
 }
