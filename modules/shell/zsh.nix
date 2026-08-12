@@ -17,6 +17,7 @@ in
         unzip
         xclip
         nix-output-monitor
+        perl
       ];
     };
 
