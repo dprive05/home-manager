@@ -66,10 +66,19 @@ in
       default = true;
       description = "Enable the lazygit config";
     };
+    nixfmt = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable the nixfmt config";
+    };
   };
 
    config = {
-    home.packages = lib.mkIf cfg.nixvim [ nixvim ];
+    home.packages = 
+      with pkgs;
+        (if cfg.nixfmt then [ nixfmt ] else [  ])
+        ++(if cfg.nixvim then [ nixvim ] else [ ]);
+
     programs = {lazygit.enable = cfg.lazygit;};
   };
 }
