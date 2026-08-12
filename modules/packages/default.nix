@@ -95,17 +95,11 @@ in
       default = false;
       description = "Enable the Zen Browser";
     };
-    lazygit= lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable the lazygit";
-    };
   };
 
   config = lib.mkIf cfg.enable {
     programs = { 
       zen-browser.enable = cfg.zen;
-      lazygit.enable = cfg.lazygit;
     };
     home.packages =
       with pkgs;
