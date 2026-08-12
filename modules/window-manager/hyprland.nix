@@ -102,7 +102,7 @@ in
       enable = true;
       configType = "hyprlang";
       systemd = {
-        enable = false;
+        enable = true;
         variables = [
           "--all"
         ];
