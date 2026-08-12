@@ -58,6 +58,7 @@ in
     starship = true;
     git = true;
     nixvim = true;
+    lazygit = true;
   };
 
   window-manager = {
@@ -92,7 +93,6 @@ in
     imv = true;
     nautilus = true;
     zen = true;
-    lazygit = true;
   };
 
 }
