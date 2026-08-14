@@ -79,7 +79,7 @@ in
   };
 
   application = {
-    enable = false;
+    enable = true;
     kitty = false;
     prismlauncher = false;
     vesktop = false;
@@ -87,12 +87,13 @@ in
     cisco-packet-tracer = false;
     libreoffice = false;
     obsidian = false;
-    fonts = false;
+    fonts = true;
     vlc = false;
     evince = false;
     imv = false;
     nautilus = false;
     zen = false;
+    element = true;
   };
 
 }
