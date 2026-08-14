@@ -93,6 +93,7 @@ in
     imv = true;
     nautilus = true;
     zen = true;
+    element = true;
   };
 
 }
