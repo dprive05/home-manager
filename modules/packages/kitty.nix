@@ -8,7 +8,7 @@
 
 let
   cfg = config.application.kitty;
-  font_size = if pkgs.stdenv.isDarwin then 14 else 12;
+  font_size = if pkgs.stdenv.hostPlatform.isDarwin then 14 else 12;
 in
 {
   config = lib.mkIf cfg {
