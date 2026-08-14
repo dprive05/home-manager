@@ -87,7 +87,7 @@ in
     cisco-packet-tracer = false;
     libreoffice = true;
     obsidian = true;
-    fonts = true;
+    fonts = false;
     vlc = true;
     evince = true;
     imv = true;
