@@ -95,6 +95,11 @@ in
       default = false;
       description = "Enable the Zen Browser";
     };
+    element = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable the element Desktop";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -108,6 +113,15 @@ in
           [
             prismlauncher
             openjdk
+          ]
+        else
+          [ ]
+        )
+        ++(
+        if cfg.element then
+          [
+            element-desktop
+            libsecret
           ]
         else
           [ ]
