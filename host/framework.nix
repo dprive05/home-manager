@@ -84,7 +84,7 @@ in
     prismlauncher = true;
     vesktop = true;
     microsoft-edge = true;
-    cisco-packet-tracer = true;
+    cisco-packet-tracer = false;
     libreoffice = true;
     obsidian = true;
     fonts = true;
