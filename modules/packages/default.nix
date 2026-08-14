@@ -132,8 +132,7 @@ in
       ++ (if cfg.libreoffice then [ libreoffice ] else [ ])
       ++ (if cfg.obsidian then [ obsidian ] else [ ])
       ++ (
-        if cfg.fonts then
-          [
+        if cfg.fonts then with pkgs.nerd-fonts; [
             fira-code
             jetbrains-mono
           ]
