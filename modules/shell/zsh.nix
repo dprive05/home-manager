@@ -18,7 +18,6 @@ in
         xclip
         nix-output-monitor
         perl
-        wl-clipboard
       ];
     };
 
