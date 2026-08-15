@@ -41,7 +41,7 @@ in
           autoSetupRemote = true;
         };
         user = {
-          name = "Raphael Chouraqui";
+          name = "rchouraqui";
           email = "raphaelchouraqui92@gmail.com";
         };
       };
