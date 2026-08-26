@@ -82,17 +82,9 @@
           system = "x86_64-linux";
           path = ./host/framework.nix;
         };
-        srv-nuc = {
+        server = {
           system = "x86_64-linux";
-          path = ./host/srv-nuc.nix;
-        };
-        srv-zbook = {
-          system = "x86_64-linux";
-          path = ./host/srv-zbook.nix;
-        };
-        srv-elitebook = {
-          system = "x86_64-linux";
-          path = ./host/srv-elitebook.nix;
+          path = ./host/server.nix;
         };
       };
     in
