@@ -100,10 +100,20 @@ in
       default = false;
       description = "Enable the element Desktop";
     };
+    blender = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable the blender Desktop";
+    };
+    godot = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable the godot Desktop";
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    programs = { 
+    programs = {
       zen-browser.enable = cfg.zen;
     };
     home.packages =
@@ -116,8 +126,8 @@ in
           ]
         else
           [ ]
-        )
-        ++(
+      )
+      ++ (
         if cfg.element then
           [
             element-desktop
@@ -132,7 +142,9 @@ in
       ++ (if cfg.libreoffice then [ libreoffice ] else [ ])
       ++ (if cfg.obsidian then [ obsidian ] else [ ])
       ++ (
-        if cfg.fonts then with pkgs.nerd-fonts; [
+        if cfg.fonts then
+          with pkgs.nerd-fonts;
+          [
             fira-code
             jetbrains-mono
           ]
@@ -142,6 +154,8 @@ in
       ++ (if cfg.vlc then [ vlc ] else [ ])
       ++ (if cfg.evince then [ evince ] else [ ])
       ++ (if cfg.imv then [ imv ] else [ ])
-      ++ (if cfg.nautilus then [ nautilus ] else [ ]);
+      ++ (if cfg.nautilus then [ nautilus ] else [ ])
+      ++ (if cfg.blender then [ blender ] else [ ])
+      ++ (if cfg.godot then [ godot ] else [ ]);
   };
 }
