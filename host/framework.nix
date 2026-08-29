@@ -94,6 +94,8 @@ in
     nautilus = true;
     zen = true;
     element = true;
+    blender = true;
+    godot = true;
   };
 
 }
