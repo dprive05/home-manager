@@ -227,11 +227,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1787916700,
-        "narHash": "sha256-DJYi+CVwbJlV9alS7RHIzkkCNBgBDJeXoAk5hIDDhRk=",
+        "lastModified": 1787955202,
+        "narHash": "sha256-qT83ghzQ2WnBYuwC2QQAAwiaHta0SxWL6iymnkf/JJA=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "62b40e1d04f5b5d6c045d3cb4feb47a6de8507ea",
+        "rev": "60695e18c8cd17399651a9af5db3f42d1867e1e6",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1787884265,
-        "narHash": "sha256-b654Xz1XmEIXuIl/xvQ/xfa9Ly0MoHjor17e4JDMcO4=",
+        "lastModified": 1787970661,
+        "narHash": "sha256-EYNOnZkptYDcOY7HLmHs16KIm/7toEWqiMHNZOj1h60=",
         "owner": "EniumRaphael",
         "repo": "nixvim",
-        "rev": "f9adcb0803089df801c858cd8517b8ca3cba566a",
+        "rev": "4e9ec199812d762ae22bac0d0cb51f1c9ae6b098",
         "type": "github"
       },
       "original": {
@@ -673,11 +673,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787925155,
-        "narHash": "sha256-HKhib9i4qXbhojqQhcrQcFYD+CSBsktiqlYCrbnS+Zg=",
+        "lastModified": 1787937002,
+        "narHash": "sha256-Gxk6hObCh1ZQPNXQ6EfLMKwFz9PFKKSDTva3ntUsdvU=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "d4e4e651bdedf1931c9cd6a58f3d5ddbdc6f5e30",
+        "rev": "382e4f584c03b750d35849faff70ac1aa44fd6cf",
         "type": "github"
       },
       "original": {
