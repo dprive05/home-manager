@@ -74,8 +74,8 @@ in
           "l" = "ls -l";
           "vim" = "nvim";
           "ssh" = "TERM=xterm-256color ssh";
-          "vpn-on" = "sudo wg-quick up wg0";
-          "vpn-off" = "sudo wg-quick down wg0";
+          "vpn-on" = "sudo systemctl start wg-quick-wg0";
+          "vpn-off" = "sudo systemctl stop wg-quick-wg0";
         };
         zplug = {
           enable = true;
