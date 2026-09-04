@@ -96,6 +96,7 @@ in
     element = true;
     blender = true;
     godot = true;
+    spice = true;
   };
 
 }
