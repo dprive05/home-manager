@@ -110,6 +110,11 @@ in
       default = false;
       description = "Enable the godot Desktop";
     };
+    spice = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable the spice Desktop";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -156,6 +161,7 @@ in
       ++ (if cfg.imv then [ imv ] else [ ])
       ++ (if cfg.nautilus then [ nautilus ] else [ ])
       ++ (if cfg.blender then [ blender ] else [ ])
-      ++ (if cfg.godot then [ godot ] else [ ]);
+      ++ (if cfg.godot then [ godot ] else [ ])
+      ++ (if cfg.spice then [ spice ] else [ ]);
   };
 }
